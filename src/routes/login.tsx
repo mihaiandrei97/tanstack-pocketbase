@@ -37,32 +37,32 @@ export default function LoginComponent() {
     }
   }
   return (
-    <div className="min-h-screen bg-gray-50 relative flex flex-col justify-center py-12 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="min-h-screen bg-gray-50 relative flex flex-col justify-center py-12 sm:px-6 lg:px-8 overflow-hidden animate-fadeIn">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-gray-50 [mask-image:linear-gradient(0deg,white,transparent)] dark:bg-gray-900">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] animate-slowPulse" />
       </div>
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md relative">
-        <div className="bg-white py-8 px-4 shadow-lg sm:rounded-lg sm:px-10 border border-gray-100">
-          {/* Logo */}
-          <div className="mx-auto w-14 h-14 flex items-center justify-center rounded-full bg-blue-100">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-blue-600">
+        <div className="bg-white py-8 px-4 shadow-xl sm:rounded-lg sm:px-10 border border-gray-100 hover:shadow-lg transition-all duration-300">
+          {/* Logo with animation */}
+          <div className="mx-auto w-14 h-14 flex items-center justify-center rounded-full bg-gray-100 animate-bounce-slow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-gray-600">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
             </svg>
           </div>
 
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          <h2 className="mt-6 text-center text-3xl font-bold text-gray-900 tracking-tight">
             Tanstack + Pocketbase
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600 mb-8">
-            Sign in to your account to get started
+            Sign in to access your dashboard
           </p>
 
           <div className="space-y-6">
             <button
               onClick={handleLogin}
-              className="w-full py-2.5 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 flex items-center justify-center transition-all duration-200 hover:scale-[1.02]"
+              className="w-full py-2.5 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 flex items-center justify-center transition-all duration-200 hover:scale-[1.02]"
             >
               {isLoading
                 ? (
@@ -112,6 +112,9 @@ export default function LoginComponent() {
             </div>
           </div>
         </div>
+
+        {/* Add a subtle decorative element */}
+        <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-gray-500/20 to-gray-500/20 rounded-full blur-xl" />
       </div>
     </div>
   );
